@@ -1,45 +1,93 @@
 {
   "tools": [
     {
-      "name": "Base64 Encoder / Decoder",
+      "name": {
+        "en": "Base64 Encoder / Decoder",
+        "pt": "Codificador / Decodificador Base64",
+        "es": "Codificador / Decodificador Base64"
+      },
       "slug": "base64",
       "category": "dev",
-      "description": "Encode and decode Base64 strings",
+      "description": {
+        "en": "Encode and decode Base64 strings",
+        "pt": "Codifique e decodifique strings Base64",
+        "es": "Codifica y decodifica cadenas Base64"
+      },
       "icon": "🔐"
     },
     {
-      "name": "JSON Formatter",
+      "name": {
+        "en": "JSON Formatter",
+        "pt": "Formatador JSON",
+        "es": "Formateador JSON"
+      },
       "slug": "json-formatter",
       "category": "dev",
-      "description": "Format and validate JSON",
+      "description": {
+        "en": "Format and validate JSON",
+        "pt": "Formate e valide JSON",
+        "es": "Formatea y valida JSON"
+      },
       "icon": "{ }"
     },
     {
-      "name": "PDF Merger",
+      "name": {
+        "en": "PDF Merger",
+        "pt": "Mesclador de PDF",
+        "es": "Combinador de PDF"
+      },
       "slug": "pdf-merge",
       "category": "pdf",
-      "description": "Merge multiple PDF files into one",
+      "description": {
+        "en": "Merge multiple PDF files into one",
+        "pt": "Mescle vários arquivos PDF em um",
+        "es": "Combina varios archivos PDF en uno"
+      },
       "icon": "📑"
     },
     {
-      "name": "PDF Splitter",
+      "name": {
+        "en": "PDF Splitter",
+        "pt": "Divisor de PDF",
+        "es": "Divisor de PDF"
+      },
       "slug": "pdf-split",
       "category": "pdf",
-      "description": "Split PDF files into multiple documents",
+      "description": {
+        "en": "Split PDF files into multiple documents",
+        "pt": "Divida arquivos PDF em vários documentos",
+        "es": "Divide archivos PDF en múltiples documentos"
+      },
       "icon": "✂️"
     },
     {
-      "name": "JWT Decoder",
+      "name": {
+        "en": "JWT Decoder",
+        "pt": "Decodificador JWT",
+        "es": "Decodificador JWT"
+      },
       "slug": "jwt-decoder",
       "category": "dev",
-      "description": "Decode and inspect JWT tokens",
+      "description": {
+        "en": "Decode and inspect JWT tokens",
+        "pt": "Decodifique e inspecione tokens JWT",
+        "es": "Decodifica e inspecciona tokens JWT"
+      },
       "icon": "🔑"
     },
     {
-      "name": "Hash Generator",
+      "name": {
+        "en": "Hash Generator",
+        "pt": "Gerador de Hash",
+        "es": "Generador de Hash"
+      },
       "slug": "hash-generator",
       "category": "dev",
-      "description": "Generate MD5, SHA-1, and SHA-256 hashes",
+      "description": {
+        "en": "Generate MD5, SHA-1, and SHA-256 hashes",
+        "pt": "Gere hashes MD5, SHA-1 e SHA-256",
+        "es": "Genera hashes MD5, SHA-1 y SHA-256"
+      },
       "icon": "#️⃣"
     }
   ]

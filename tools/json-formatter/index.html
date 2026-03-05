@@ -28,7 +28,7 @@
       <main class="container tool-container">
         <div class="input-section">
           <div class="section-header">
-            <h3>Input JSON</h3>
+            <h3 data-i18n="json_input_header">Input JSON</h3>
             <div class="section-actions">
               <span id="input-char-count" class="char-count">0 characters</span>
               <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
@@ -37,15 +37,15 @@
           <textarea
             id="json-input"
             class="tool-input"
-            placeholder="Paste your JSON here..."
+            placeholder="Paste your JSON here..." data-placeholder-i18n="json_input_placeholder"
             spellcheck="false"
           ></textarea>
         </div>
 
         <div class="tool-actions">
-          <button id="format-btn">Format JSON</button>
-          <button id="minify-btn">Minify JSON</button>
-          <button id="validate-btn">Validate JSON</button>
+          <button id="format-btn" data-i18n="json_format_btn">Format JSON</button>
+          <button id="minify-btn" data-i18n="json_minify_btn">Minify JSON</button>
+          <button id="validate-btn" data-i18n="json_validate_btn">Validate JSON</button>
         </div>
 
         <div class="output-section">
@@ -60,7 +60,7 @@
           <textarea
             id="json-output"
             class="tool-output"
-            placeholder="Formatted JSON will appear here..."
+            placeholder="Formatted JSON will appear here..." data-placeholder-i18n="json_output_placeholder"
             readonly
             spellcheck="false"
           ></textarea>

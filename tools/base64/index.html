@@ -28,7 +28,7 @@
       <div class="tool-container">
         <div class="input-section">
           <div class="section-header">
-            <h3>Input Text</h3>
+            <h3 data-i18n="base64_input_header">Input Text</h3>
             <div class="section-actions">
               <span id="input-char-count" class="char-count">0 characters</span>
               <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
@@ -37,19 +37,19 @@
           <textarea
             id="input"
             class="tool-input"
-            placeholder="Enter text here..."
+            placeholder="Enter text here..." data-placeholder-i18n="base64_input_placeholder"
             spellcheck="false"
           ></textarea>
         </div>
 
         <div class="tool-actions">
-          <button id="encode-btn">Encode to Base64</button>
-          <button id="decode-btn">Decode from Base64</button>
+          <button id="encode-btn" data-i18n="base64_encode_btn">Encode to Base64</button>
+          <button id="decode-btn" data-i18n="base64_decode_btn">Decode from Base64</button>
         </div>
 
         <div class="output-section">
           <div class="section-header">
-            <h3>Output</h3>
+            <h3 data-i18n="base64_output_header">Output</h3>
             <div class="section-actions">
               <span id="output-char-count" class="char-count">0 characters</span>
               <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
@@ -59,7 +59,7 @@
           <textarea
             id="output"
             class="tool-output"
-            placeholder="Result will appear here..."
+            placeholder="Result will appear here..." data-placeholder-i18n="base64_output_placeholder"
             readonly
             spellcheck="false"
           ></textarea>

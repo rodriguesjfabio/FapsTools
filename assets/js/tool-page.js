@@ -16,9 +16,12 @@ async function loadToolPage() {
   const title = document.getElementById("tool-title");
   const description = document.getElementById("tool-description");
   const icon = document.getElementById("tool-icon");
+  const lang = localStorage.getItem('ft_lang') || 'en';
+  const tName = tool.name?.[lang] || tool.name?.en || tool.name;
+  const tDesc = tool.description?.[lang] || tool.description?.en || tool.description;
 
-  if (title) title.textContent = tool.name;
-  if (description) description.textContent = tool.description;
+  if (title) title.textContent = tName;
+  if (description) description.textContent = tDesc;
   if (icon) icon.textContent = tool.icon;
 
   document.title = `${tool.name} | FapsTools`;

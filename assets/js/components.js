@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent("footer", "/components/footer.html");
   
   // Load search script for navbar search functionality after navbar is loaded
+  await loadScript("/assets/js/i18n.js").catch(error => {
+    console.error("Error loading i18n script", error);
+  });
+
+  // Load search script for navbar search functionality after navbar is loaded
   await loadScript("/assets/js/search.js").catch(error => {
     console.error("Error loading search script", error);
   });

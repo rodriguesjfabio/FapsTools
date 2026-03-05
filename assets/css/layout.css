@@ -6,7 +6,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* slightly smaller min width to fit four items in category views */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-lg);
   margin-top: var(--space-lg);
 }
@@ -17,7 +18,7 @@
   gap: var(--space-md);
 
   background: var(--color-surface);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   border-radius: var(--radius-md);
 
   border: 1px solid var(--color-border);
@@ -36,12 +37,12 @@
 }
 
 .card-icon {
-  font-size: 48px;
+  font-size: 36px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 48px;
+  min-width: 36px;
 }
 
 .card-content {
@@ -50,11 +51,17 @@
 }
 
 .card-content h3 {
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
+  font-size: 16px;
 }
 
 .card-content p {
   margin: 0;
+  font-size: 14px;
+}
+
+h2 {
+  margin-top: var(--space-md);
 }
 
 .card:hover {
@@ -69,7 +76,17 @@
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 
-  padding: var(--space-lg) 0;
+  /* reduce bottom padding to almost none for small gap after subtitle */
+  padding: calc(var(--space-md)/3) 0 var(--space-xs) 0;
+}
+
+.site-header h1 {
+  /* tighten header text spacing as well */
+  margin-bottom: 2px;
+}
+
+.site-header p {
+  margin-bottom: 0; /* remove extra gap below subtitle */
 }
 
 .tool-header {
@@ -142,6 +159,26 @@
 .nav-links a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.lang-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: var(--space-md);
+}
+
+.lang-selector button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.9;
+}
+
+.lang-selector button:hover {
+  opacity: 1;
 }
 
 .search-container {
@@ -245,4 +282,6 @@ main {
 
 .page-content {
   flex: 1;
+  /* reduce vertical padding for tighter layout */
+  padding: var(--space-sm) 0;
 }

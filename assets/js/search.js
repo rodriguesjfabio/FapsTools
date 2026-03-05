@@ -74,6 +74,13 @@ async function initializeSearch() {
     const response = await fetch('/data/tools.json');
     const data = await response.json();
     allTools = data.tools || [];
+    // Add translated fields for search
+    const lang = localStorage.getItem('ft_lang') || 'en';
+    allTools = allTools.map(tool => ({
+      ...tool,
+      name: tool.name?.[lang] || tool.name?.en || tool.name,
+      description: tool.description?.[lang] || tool.description?.en || tool.description
+    }));
     setupSearchEventListeners();
   } catch (error) {
     console.error('Failed to load tools for search:', error);
@@ -132,7 +139,7 @@ function performSearch(searchTerm) {
   // Display results
   if (scoredTools.length === 0) {
     searchResults.innerHTML =
-      '<div class="search-no-results">Nenhuma ferramenta encontrada</div>';
+      `<div class="search-no-results">${t('no_results') || 'No results'}</div>`;
   } else {
     searchResults.innerHTML = scoredTools
       .map(

@@ -1,14 +1,30 @@
 [
   {
     "slug": "dev",
-    "name": "Developer Tools",
-    "description": "Useful utilities for programmers",
+    "name": {
+      "en": "Developer Tools",
+      "pt": "Ferramentas de Desenvolvedor",
+      "es": "Herramientas de Desarrollador"
+    },
+    "description": {
+      "en": "Useful utilities for programmers",
+      "pt": "Utilitários úteis para programadores",
+      "es": "Utilidades útiles para programadores"
+    },
     "icon": "👨‍💻"
   },
   {
     "slug": "pdf",
-    "name": "PDF Tools",
-    "description": "Merge, split and edit PDFs",
+    "name": {
+      "en": "PDF Tools",
+      "pt": "Ferramentas de PDF",
+      "es": "Herramientas de PDF"
+    },
+    "description": {
+      "en": "Merge, split and edit PDFs",
+      "pt": "Mesclar, dividir e editar PDFs",
+      "es": "Combinar, dividir y editar PDFs"
+    },
     "icon": "📄"
   }
 ]

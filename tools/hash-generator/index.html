@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Hash Generator</title>
+
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/tool-ui.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <header class="site-header">
+      <div class="container tool-header">
+        <div id="tool-icon" class="tool-icon"></div>
+        <div class="tool-header-content">
+          <h1 id="tool-title"></h1>
+          <p id="tool-description"></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="tool-container">
+        <div class="input-section">
+          <div class="section-header">
+            <h3>Input Text</h3>
+            <div class="section-actions">
+              <span id="input-char-count" class="char-count">0 characters</span>
+              <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="input"
+            class="tool-input"
+            placeholder="Enter text to hash..."
+            spellcheck="false"
+          ></textarea>
+        </div>
+
+        <div class="tool-actions">
+          <button id="sha1-btn">Generate SHA-1</button>
+          <button id="sha256-btn">Generate SHA-256</button>
+        </div>
+
+        <div class="output-section">
+          <div class="section-header">
+            <h3>Hash Output</h3>
+            <div class="section-actions">
+              <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+              <button id="clear-output-btn" class="clear-btn" title="Clear output">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="output"
+            class="tool-output"
+            placeholder="Hash will appear here..."
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-page.js"></script>
+    <script src="./tool.js"></script>
+  </body>
+</html>

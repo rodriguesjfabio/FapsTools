@@ -12,7 +12,7 @@
       "slug": "json-formatter",
       "category": "dev",
       "description": "Format and validate JSON",
-      "icon": "{}"
+      "icon": "{ }"
     },
     {
       "name": "PDF Merger",
@@ -27,6 +27,20 @@
       "category": "pdf",
       "description": "Split PDF files into multiple documents",
       "icon": "✂️"
+    },
+    {
+      "name": "JWT Decoder",
+      "slug": "jwt-decoder",
+      "category": "dev",
+      "description": "Decode and inspect JWT tokens",
+      "icon": "🔑"
+    },
+    {
+      "name": "Hash Generator",
+      "slug": "hash-generator",
+      "category": "dev",
+      "description": "Generate MD5, SHA-1, and SHA-256 hashes",
+      "icon": "#️⃣"
     }
   ]
 }

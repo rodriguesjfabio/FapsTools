@@ -13,7 +13,27 @@ async function loadComponent(id, file) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("navbar", "/components/navbar.html");
-  loadComponent("footer", "/components/footer.html");
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadComponent("navbar", "/components/navbar.html");
+  await loadComponent("footer", "/components/footer.html");
+  
+  // Load search script for navbar search functionality after navbar is loaded
+  await loadScript("/assets/js/i18n.js").catch(error => {
+    console.error("Error loading i18n script", error);
+  });
+
+  // Load search script for navbar search functionality after navbar is loaded
+  await loadScript("/assets/js/search.js").catch(error => {
+    console.error("Error loading search script", error);
+  });
 });

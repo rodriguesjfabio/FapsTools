@@ -27,3 +27,11 @@ a {
 a:hover {
   color: var(--color-primary-hover);
 }
+
+p {
+  margin-bottom: 1.5em;
+}
+
+h1 {
+  margin-bottom: 1em;
+}

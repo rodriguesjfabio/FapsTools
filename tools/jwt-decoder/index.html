@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
 
-    <title>Base64 Encoder / Decoder</title>
+    <title>JWT Decoder</title>
 
     <link rel="stylesheet" href="/assets/css/variables.css" />
     <link rel="stylesheet" href="/assets/css/base.css" />
@@ -25,47 +25,75 @@
     </header>
 
     <div class="page-content">
-      <main class="container tool-container">
+      <div class="tool-container">
         <div class="input-section">
           <div class="section-header">
-            <h3 data-i18n="json_input_header">Input JSON</h3>
+            <h3>JWT Token</h3>
             <div class="section-actions">
               <span id="input-char-count" class="char-count">0 characters</span>
               <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
             </div>
           </div>
           <textarea
-            id="json-input"
+            id="jwt-input"
             class="tool-input"
-            placeholder="Paste your JSON here..." data-placeholder-i18n="json_input_placeholder"
+            placeholder="Paste your JWT token here..."
             spellcheck="false"
           ></textarea>
         </div>
 
         <div class="tool-actions">
-          <button id="format-btn" data-i18n="json_format_btn">Format JSON</button>
-          <button id="minify-btn" data-i18n="json_minify_btn">Minify JSON</button>
-          <button id="validate-btn" data-i18n="json_validate_btn">Validate JSON</button>
+          <button id="decode-btn">Decode JWT</button>
         </div>
 
         <div class="output-section">
           <div class="section-header">
-            <h3>Output</h3>
+            <h3>Header</h3>
             <div class="section-actions">
-              <span id="output-char-count" class="char-count">0 characters</span>
-              <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
-              <button id="clear-output-btn" class="clear-btn" title="Clear output">🗑️</button>
+              <button id="copy-header-btn" class="copy-btn" title="Copy to clipboard">📋</button>
             </div>
           </div>
           <textarea
-            id="json-output"
+            id="header-output"
             class="tool-output"
-            placeholder="Formatted JSON will appear here..." data-placeholder-i18n="json_output_placeholder"
+            placeholder="JWT header will appear here..."
             readonly
             spellcheck="false"
           ></textarea>
         </div>
-      </main>
+
+        <div class="output-section">
+          <div class="section-header">
+            <h3>Payload</h3>
+            <div class="section-actions">
+              <button id="copy-payload-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+            </div>
+          </div>
+          <textarea
+            id="payload-output"
+            class="tool-output"
+            placeholder="JWT payload will appear here..."
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
+
+        <div class="output-section">
+          <div class="section-header">
+            <h3>Signature</h3>
+            <div class="section-actions">
+              <button id="copy-signature-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+            </div>
+          </div>
+          <textarea
+            id="signature-output"
+            class="tool-output"
+            placeholder="JWT signature will appear here..."
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
+      </div>
     </div>
     <div id="footer"></div>
 

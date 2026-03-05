@@ -1,48 +1,57 @@
 let inputTextarea = null;
 let outputTextarea = null;
 let inputCharCount = null;
-let outputCharCount = null;
 
-function encodeBase64() {
+async function generateSHA1() {
   const input = inputTextarea.value;
-  const output = outputTextarea;
 
   if (!input.trim()) {
-    output.value = "";
-    updateCharCounts();
+    outputTextarea.value = "";
     return;
   }
 
   try {
-    output.value = btoa(input);
-    updateCharCounts();
-    showSuccess("Text encoded successfully!");
+    const hash = await sha1(input);
+    outputTextarea.value = hash;
+    showSuccess("SHA-1 hash generated!");
   } catch (err) {
-    output.value = "Error: Invalid input for Base64 encoding";
-    updateCharCounts();
-    showError("Invalid input for Base64 encoding");
+    outputTextarea.value = "Error generating SHA-1 hash";
+    showError("Failed to generate SHA-1 hash");
   }
 }
 
-function decodeBase64() {
+async function generateSHA256() {
   const input = inputTextarea.value;
-  const output = outputTextarea;
 
   if (!input.trim()) {
-    output.value = "";
-    updateCharCounts();
+    outputTextarea.value = "";
     return;
   }
 
   try {
-    output.value = atob(input);
-    updateCharCounts();
-    showSuccess("Base64 decoded successfully!");
+    const hash = await sha256(input);
+    outputTextarea.value = hash;
+    showSuccess("SHA-256 hash generated!");
   } catch (err) {
-    output.value = "Error: Invalid Base64 string";
-    updateCharCounts();
-    showError("Invalid Base64 string");
+    outputTextarea.value = "Error generating SHA-256 hash";
+    showError("Failed to generate SHA-256 hash");
   }
+}
+
+async function sha1(str) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function sha256(str) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 function copyToClipboard() {
@@ -54,7 +63,7 @@ function copyToClipboard() {
   }
 
   navigator.clipboard.writeText(output).then(() => {
-    showSuccess("Copied to clipboard!");
+    showSuccess("Hash copied to clipboard!");
   }).catch(err => {
     console.error('Failed to copy: ', err);
     showError("Failed to copy to clipboard");
@@ -63,21 +72,18 @@ function copyToClipboard() {
 
 function clearInput() {
   inputTextarea.value = "";
-  updateCharCounts();
+  updateCharCount();
+  outputTextarea.value = "";
   inputTextarea.focus();
 }
 
 function clearOutput() {
   outputTextarea.value = "";
-  updateCharCounts();
 }
 
-function updateCharCounts() {
-  const inputText = inputTextarea.value;
-  const outputText = outputTextarea.value;
-
-  inputCharCount.textContent = `${inputText.length} character${inputText.length !== 1 ? 's' : ''}`;
-  outputCharCount.textContent = `${outputText.length} character${outputText.length !== 1 ? 's' : ''}`;
+function updateCharCount() {
+  const text = inputTextarea.value;
+  inputCharCount.textContent = `${text.length} character${text.length !== 1 ? 's' : ''}`;
 }
 
 function showSuccess(message) {
@@ -113,19 +119,19 @@ function showNotification(message, type) {
 }
 
 function handleKeyDown(event) {
-  // Ctrl+Enter to encode/decode
-  if (event.ctrlKey && event.key === 'Enter') {
+  // Ctrl+Shift+1 for SHA-1
+  if (event.ctrlKey && event.shiftKey && event.key === '1') {
     event.preventDefault();
     if (document.activeElement === inputTextarea) {
-      encodeBase64();
+      generateSHA1();
     }
   }
 
-  // Ctrl+Shift+Enter to decode
-  if (event.ctrlKey && event.shiftKey && event.key === 'Enter') {
+  // Ctrl+Shift+2 for SHA-256
+  if (event.ctrlKey && event.shiftKey && event.key === '2') {
     event.preventDefault();
     if (document.activeElement === inputTextarea) {
-      decodeBase64();
+      generateSHA256();
     }
   }
 
@@ -147,30 +153,28 @@ document.addEventListener('DOMContentLoaded', () => {
   inputTextarea = document.getElementById('input');
   outputTextarea = document.getElementById('output');
   inputCharCount = document.getElementById('input-char-count');
-  outputCharCount = document.getElementById('output-char-count');
 
-  const encodeBtn = document.getElementById('encode-btn');
-  const decodeBtn = document.getElementById('decode-btn');
+  const sha1Btn = document.getElementById('sha1-btn');
+  const sha256Btn = document.getElementById('sha256-btn');
   const copyBtn = document.getElementById('copy-output-btn');
   const clearInputBtn = document.getElementById('clear-input-btn');
   const clearOutputBtn = document.getElementById('clear-output-btn');
 
   // Event listeners
-  encodeBtn.addEventListener('click', encodeBase64);
-  decodeBtn.addEventListener('click', decodeBase64);
+  sha1Btn.addEventListener('click', generateSHA1);
+  sha256Btn.addEventListener('click', generateSHA256);
   copyBtn.addEventListener('click', copyToClipboard);
   clearInputBtn.addEventListener('click', clearInput);
   clearOutputBtn.addEventListener('click', clearOutput);
 
-  inputTextarea.addEventListener('input', updateCharCounts);
+  inputTextarea.addEventListener('input', updateCharCount);
   inputTextarea.addEventListener('input', () => autoResizeTextarea(inputTextarea));
-  outputTextarea.addEventListener('input', updateCharCounts);
   outputTextarea.addEventListener('input', () => autoResizeTextarea(outputTextarea));
 
   document.addEventListener('keydown', handleKeyDown);
 
   // Initial setup
-  updateCharCounts();
+  updateCharCount();
   autoResizeTextarea(inputTextarea);
   autoResizeTextarea(outputTextarea);
 });

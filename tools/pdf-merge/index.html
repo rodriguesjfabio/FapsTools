@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>PDF Merger</title>
+
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/tool-ui.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <header class="site-header">
+      <div class="container tool-header">
+        <div id="tool-icon" class="tool-icon"></div>
+        <div class="tool-header-content">
+          <h1 id="tool-title"></h1>
+          <p id="tool-description"></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <main class="container tool-container">
+        <div class="pdf-upload-area">
+          <input
+            type="file"
+            id="pdf-files"
+            multiple
+            accept=".pdf"
+            class="pdf-file-input"
+          />
+          <label for="pdf-files" class="pdf-upload-label">
+            <div class="upload-icon">📄</div>
+            <div class="upload-text">
+              <strong>Choose PDF files</strong>
+              <span>or drag and drop them here</span>
+            </div>
+          </label>
+        </div>
+
+        <div id="file-list" class="file-list"></div>
+
+        <div class="tool-actions">
+          <button id="merge-btn" disabled>Merge PDFs</button>
+          <button id="clear-btn">Clear All</button>
+        </div>
+
+        <div id="progress-container" class="progress-container" style="display: none;">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <p id="progress-text">Processing...</p>
+        </div>
+      </main>
+    </div>
+    <div id="footer"></div>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-page.js"></script>
+    <script src="./tool.js"></script>
+  </body>
+</html>

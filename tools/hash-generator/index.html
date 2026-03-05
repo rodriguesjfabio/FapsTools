@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
 
-    <title>Base64 Encoder / Decoder</title>
+    <title>Hash Generator</title>
 
     <link rel="stylesheet" href="/assets/css/variables.css" />
     <link rel="stylesheet" href="/assets/css/base.css" />
@@ -25,47 +25,45 @@
     </header>
 
     <div class="page-content">
-      <main class="container tool-container">
+      <div class="tool-container">
         <div class="input-section">
           <div class="section-header">
-            <h3 data-i18n="json_input_header">Input JSON</h3>
+            <h3>Input Text</h3>
             <div class="section-actions">
               <span id="input-char-count" class="char-count">0 characters</span>
               <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
             </div>
           </div>
           <textarea
-            id="json-input"
+            id="input"
             class="tool-input"
-            placeholder="Paste your JSON here..." data-placeholder-i18n="json_input_placeholder"
+            placeholder="Enter text to hash..."
             spellcheck="false"
           ></textarea>
         </div>
 
         <div class="tool-actions">
-          <button id="format-btn" data-i18n="json_format_btn">Format JSON</button>
-          <button id="minify-btn" data-i18n="json_minify_btn">Minify JSON</button>
-          <button id="validate-btn" data-i18n="json_validate_btn">Validate JSON</button>
+          <button id="sha1-btn">Generate SHA-1</button>
+          <button id="sha256-btn">Generate SHA-256</button>
         </div>
 
         <div class="output-section">
           <div class="section-header">
-            <h3>Output</h3>
+            <h3>Hash Output</h3>
             <div class="section-actions">
-              <span id="output-char-count" class="char-count">0 characters</span>
               <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
               <button id="clear-output-btn" class="clear-btn" title="Clear output">🗑️</button>
             </div>
           </div>
           <textarea
-            id="json-output"
+            id="output"
             class="tool-output"
-            placeholder="Formatted JSON will appear here..." data-placeholder-i18n="json_output_placeholder"
+            placeholder="Hash will appear here..."
             readonly
             spellcheck="false"
           ></textarea>
         </div>
-      </main>
+      </div>
     </div>
     <div id="footer"></div>
 

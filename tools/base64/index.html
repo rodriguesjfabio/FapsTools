@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Base64 Encoder / Decoder</title>
+
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/tool-ui.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <header class="site-header">
+      <div class="container">
+        <h1 id="tool-title"></h1>
+        <p id="tool-description"></p>
+      </div>
+    </header>
+
+    <div class="tool-container">
+      <textarea
+        id="input"
+        class="tool-input"
+        placeholder="Enter text here..."
+      ></textarea>
+
+      <div class="tool-actions">
+        <button onclick="encodeBase64()">Encode</button>
+        <button onclick="decodeBase64()">Decode</button>
+      </div>
+
+      <textarea
+        id="output"
+        class="tool-output"
+        placeholder="Result will appear here..."
+      ></textarea>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-page.js"></script>
+    <script src="./tool.js"></script>
+  </body>
+</html>

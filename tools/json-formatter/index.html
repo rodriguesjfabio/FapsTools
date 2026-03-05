@@ -1,36 +1,50 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
-<title>Base64 Encoder / Decoder</title>
+    <title>Base64 Encoder / Decoder</title>
 
-<link rel="stylesheet" href="/assets/css/variables.css">
-<link rel="stylesheet" href="/assets/css/base.css">
-<link rel="stylesheet" href="/assets/css/layout.css">
-</head>
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/tool-ui.css" />
+  </head>
 
-<body>
+  <body>
+    <div id="navbar"></div>
 
-<div id="navbar"></div>
+    <header class="site-header">
+      <div class="container">
+        <h1 id="tool-title"></h1>
+        <p id="tool-description"></p>
+      </div>
+    </header>
 
-<main class="container">
+    <div class="page-content">
+      <main class="container tool-container">
+        <textarea
+          id="json-input"
+          class="tool-input"
+          placeholder="Paste your JSON here..."
+        ></textarea>
 
-<h1 id="tool-title"></h1>
-<p id="tool-description"></p>
+        <div class="tool-actions">
+          <button id="format-btn">Format JSON</button>
+          <button id="minify-btn">Minify JSON</button>
+        </div>
 
-<div class="tool-container">
+        <textarea
+          id="json-output"
+          class="tool-output"
+          placeholder="Formatted JSON will appear here..."
+        ></textarea>
+      </main>
+    </div>
+    <div id="footer"></div>
 
-<!-- UI da ferramenta aqui -->
-
-</div>
-
-</main>
-
-<div id="footer"></div>
-
-<script src="/assets/js/components.js"></script>
-<script src="/assets/js/tool-page.js"></script>
-
-</body>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-page.js"></script>
+    <script src="./tool.js"></script>
+  </body>
 </html>

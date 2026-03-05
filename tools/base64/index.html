@@ -21,25 +21,26 @@
       </div>
     </header>
 
-    <div class="tool-container">
-      <textarea
-        id="input"
-        class="tool-input"
-        placeholder="Enter text here..."
-      ></textarea>
+    <div class="page-content">
+      <div class="tool-container">
+        <textarea
+          id="input"
+          class="tool-input"
+          placeholder="Enter text here..."
+        ></textarea>
 
-      <div class="tool-actions">
-        <button onclick="encodeBase64()">Encode</button>
-        <button onclick="decodeBase64()">Decode</button>
+        <div class="tool-actions">
+          <button onclick="encodeBase64()">Encode</button>
+          <button onclick="decodeBase64()">Decode</button>
+        </div>
+
+        <textarea
+          id="output"
+          class="tool-output"
+          placeholder="Result will appear here..."
+        ></textarea>
       </div>
-
-      <textarea
-        id="output"
-        class="tool-output"
-        placeholder="Result will appear here..."
-      ></textarea>
     </div>
-
     <div id="footer"></div>
 
     <script src="/assets/js/components.js"></script>

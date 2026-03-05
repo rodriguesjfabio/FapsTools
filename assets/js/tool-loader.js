@@ -38,8 +38,11 @@ async function renderTools(containerId) {
     card.href = `/tools/${tool.slug}/`;
 
     card.innerHTML = `
-      <h3>${tool.name}</h3>
-      <p>${tool.description}</p>
+      <div class="card-icon">${tool.icon}</div>
+      <div class="card-content">
+        <h3>${tool.name}</h3>
+        <p>${tool.description}</p>
+      </div>
     `;
 
     container.appendChild(card);

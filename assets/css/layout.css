@@ -12,6 +12,10 @@
 }
 
 .card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+
   background: var(--color-surface);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
@@ -31,6 +35,28 @@
     border-color 0.15s ease;
 }
 
+.card-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-content h3 {
+  margin: 0 0 6px 0;
+}
+
+.card-content p {
+  margin: 0;
+}
+
 .card:hover {
   transform: translateY(-4px);
 
@@ -44,6 +70,25 @@
   border-bottom: 1px solid var(--color-border);
 
   padding: var(--space-lg) 0;
+}
+
+.tool-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.tool-icon {
+  font-size: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+}
+
+.tool-header-content {
+  flex: 1;
 }
 
 .site-header h1 {
@@ -68,9 +113,21 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   font-weight: bold;
   font-size: 18px;
   color: white;
+
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .nav-links a {

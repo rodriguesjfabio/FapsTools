@@ -2,11 +2,13 @@
   {
     "slug": "dev",
     "name": "Developer Tools",
-    "description": "Useful utilities for programmers"
+    "description": "Useful utilities for programmers",
+    "icon": "👨‍💻"
   },
   {
     "slug": "pdf",
     "name": "PDF Tools",
-    "description": "Merge, split and edit PDFs"
+    "description": "Merge, split and edit PDFs",
+    "icon": "📄"
   }
 ]

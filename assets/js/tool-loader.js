@@ -1,13 +1,31 @@
-async function loadTools() {
-  const response = await fetch("/tools/registry.json");
-  const data = await response.json();
+let toolsCache = null;
 
-  return data.tools;
+async function loadTools() {
+  if (toolsCache) {
+    return toolsCache;
+  }
+
+  try {
+    const response = await fetch("/data/tools.json");
+    const data = await response.json();
+
+    toolsCache = data.tools;
+
+    return toolsCache;
+  } catch (error) {
+    console.error("Error loading tools:", error);
+    return [];
+  }
 }
 
-async function renderTools(containerId, category = null) {
+async function renderTools(containerId) {
   const tools = await loadTools();
   const container = document.getElementById(containerId);
+
+  if (!container) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
 
   container.innerHTML = "";
 
@@ -17,12 +35,12 @@ async function renderTools(containerId, category = null) {
     const card = document.createElement("a");
 
     card.className = "card";
-    card.href = tool.path;
+    card.href = `/tools/${tool.slug}/`;
 
     card.innerHTML = `
-            <h3>${tool.name}</h3>
-            <p>${tool.description}</p>
-        `;
+      <h3>${tool.name}</h3>
+      <p>${tool.description}</p>
+    `;
 
     container.appendChild(card);
   });

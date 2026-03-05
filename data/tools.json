@@ -1,0 +1,16 @@
+{
+  "tools": [
+    {
+      "name": "Base64 Encoder / Decoder",
+      "slug": "base64",
+      "category": "dev",
+      "description": "Encode and decode Base64 strings"
+    },
+    {
+      "name": "JSON Formatter",
+      "slug": "json-formatter",
+      "category": "dev",
+      "description": "Format and validate JSON"
+    }
+  ]
+}

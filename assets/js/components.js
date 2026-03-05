@@ -1,8 +1,16 @@
 async function loadComponent(id, file) {
-  const response = await fetch(file);
-  const html = await response.text();
+  try {
+    const response = await fetch(file);
+    const html = await response.text();
 
-  document.getElementById(id).innerHTML = html;
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.innerHTML = html;
+    }
+  } catch (error) {
+    console.error(`Error loading component ${file}`, error);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

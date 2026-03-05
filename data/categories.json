@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "dev",
+    "name": "Developer Tools",
+    "description": "Useful utilities for programmers"
+  },
+  {
+    "slug": "pdf",
+    "name": "PDF Tools",
+    "description": "Merge, split and edit PDFs"
+  }
+]

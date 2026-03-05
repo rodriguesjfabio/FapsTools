@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>PDF Splitter</title>
+
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/tool-ui.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <header class="site-header">
+      <div class="container tool-header">
+        <div id="tool-icon" class="tool-icon"></div>
+        <div class="tool-header-content">
+          <h1 id="tool-title"></h1>
+          <p id="tool-description"></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <main class="container tool-container">
+        <div class="pdf-upload-area">
+          <input
+            type="file"
+            id="pdf-file"
+            accept=".pdf"
+            class="pdf-file-input"
+          />
+          <label for="pdf-file" class="pdf-upload-label">
+            <div class="upload-icon">📄</div>
+            <div class="upload-text">
+              <strong>Choose a PDF file</strong>
+              <span>or drag and drop it here</span>
+            </div>
+          </label>
+        </div>
+
+        <div id="pdf-info" class="pdf-info" style="display: none;">
+          <h3>PDF Information</h3>
+          <p id="pdf-details"></p>
+        </div>
+
+        <div id="split-options" class="split-options" style="display: none;">
+          <h3>Split Options</h3>
+
+          <div class="split-mode">
+            <label>
+              <input type="radio" name="split-mode" value="single" checked />
+              Split at page:
+              <input type="number" id="split-page" min="1" value="1" class="page-input" />
+            </label>
+          </div>
+
+          <div class="split-mode">
+            <label>
+              <input type="radio" name="split-mode" value="range" />
+              Split into ranges:
+              <input type="text" id="page-ranges" placeholder="e.g., 1-3,4-6,7-10" class="range-input" />
+            </label>
+            <small>Separate ranges with commas (e.g., 1-3,4-6,7-10)</small>
+          </div>
+
+          <div class="split-mode">
+            <label>
+              <input type="radio" name="split-mode" value="individual" />
+              Split into individual pages
+            </label>
+          </div>
+        </div>
+
+        <div class="tool-actions">
+          <button id="split-btn" disabled>Split PDF</button>
+          <button id="clear-btn">Clear</button>
+        </div>
+
+        <div id="progress-container" class="progress-container" style="display: none;">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <p id="progress-text">Processing...</p>
+        </div>
+
+        <div id="download-links" class="download-links" style="display: none;">
+          <h3>Download Split PDFs</h3>
+          <div id="download-list"></div>
+          <button id="download-all-btn" class="download-all-btn">Download All as ZIP</button>
+        </div>
+      </main>
+    </div>
+    <div id="footer"></div>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-page.js"></script>
+    <script src="./tool.js"></script>
+  </body>
+</html>

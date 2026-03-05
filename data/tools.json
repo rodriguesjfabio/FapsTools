@@ -13,6 +13,20 @@
       "category": "dev",
       "description": "Format and validate JSON",
       "icon": "{}"
+    },
+    {
+      "name": "PDF Merger",
+      "slug": "pdf-merge",
+      "category": "pdf",
+      "description": "Merge multiple PDF files into one",
+      "icon": "📑"
+    },
+    {
+      "name": "PDF Splitter",
+      "slug": "pdf-split",
+      "category": "pdf",
+      "description": "Split PDF files into multiple documents",
+      "icon": "✂️"
     }
   ]
 }

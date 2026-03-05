@@ -26,22 +26,44 @@
 
     <div class="page-content">
       <div class="tool-container">
-        <textarea
-          id="input"
-          class="tool-input"
-          placeholder="Enter text here..."
-        ></textarea>
-
-        <div class="tool-actions">
-          <button onclick="encodeBase64()">Encode</button>
-          <button onclick="decodeBase64()">Decode</button>
+        <div class="input-section">
+          <div class="section-header">
+            <h3>Input Text</h3>
+            <div class="section-actions">
+              <span id="input-char-count" class="char-count">0 characters</span>
+              <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="input"
+            class="tool-input"
+            placeholder="Enter text here..."
+            spellcheck="false"
+          ></textarea>
         </div>
 
-        <textarea
-          id="output"
-          class="tool-output"
-          placeholder="Result will appear here..."
-        ></textarea>
+        <div class="tool-actions">
+          <button id="encode-btn">Encode to Base64</button>
+          <button id="decode-btn">Decode from Base64</button>
+        </div>
+
+        <div class="output-section">
+          <div class="section-header">
+            <h3>Output</h3>
+            <div class="section-actions">
+              <span id="output-char-count" class="char-count">0 characters</span>
+              <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+              <button id="clear-output-btn" class="clear-btn" title="Clear output">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="output"
+            class="tool-output"
+            placeholder="Result will appear here..."
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
       </div>
     </div>
     <div id="footer"></div>

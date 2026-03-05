@@ -26,22 +26,45 @@
 
     <div class="page-content">
       <main class="container tool-container">
-        <textarea
-          id="json-input"
-          class="tool-input"
-          placeholder="Paste your JSON here..."
-        ></textarea>
+        <div class="input-section">
+          <div class="section-header">
+            <h3>Input JSON</h3>
+            <div class="section-actions">
+              <span id="input-char-count" class="char-count">0 characters</span>
+              <button id="clear-input-btn" class="clear-btn" title="Clear input">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="json-input"
+            class="tool-input"
+            placeholder="Paste your JSON here..."
+            spellcheck="false"
+          ></textarea>
+        </div>
 
         <div class="tool-actions">
           <button id="format-btn">Format JSON</button>
           <button id="minify-btn">Minify JSON</button>
+          <button id="validate-btn">Validate JSON</button>
         </div>
 
-        <textarea
-          id="json-output"
-          class="tool-output"
-          placeholder="Formatted JSON will appear here..."
-        ></textarea>
+        <div class="output-section">
+          <div class="section-header">
+            <h3>Output</h3>
+            <div class="section-actions">
+              <span id="output-char-count" class="char-count">0 characters</span>
+              <button id="copy-output-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+              <button id="clear-output-btn" class="clear-btn" title="Clear output">🗑️</button>
+            </div>
+          </div>
+          <textarea
+            id="json-output"
+            class="tool-output"
+            placeholder="Formatted JSON will appear here..."
+            readonly
+            spellcheck="false"
+          ></textarea>
+        </div>
       </main>
     </div>
     <div id="footer"></div>

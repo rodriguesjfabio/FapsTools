@@ -16,8 +16,11 @@ async function loadCategories() {
       card.href = `/tools/?category=${category.slug}`;
 
       card.innerHTML = `
-        <h3>${category.name}</h3>
-        <p>${category.description}</p>
+        <div class="card-icon">${category.icon}</div>
+        <div class="card-content">
+          <h3>${category.name}</h3>
+          <p>${category.description}</p>
+        </div>
       `;
 
       container.appendChild(card);

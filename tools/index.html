@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tools - FapsTools</title>
+
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <header class="site-header">
+      <div class="container">
+        <h1>All Tools</h1>
+        <p>Browse all available tools.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="tools-grid" class="grid"></div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/tool-loader.js"></script>
+
+    <script>
+      renderTools("tools-grid");
+    </script>
+  </body>
+</html>

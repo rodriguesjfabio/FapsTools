@@ -1,0 +1,18 @@
+{
+  "tools": [
+    {
+      "id": "base64",
+      "name": "Base64 Encoder / Decoder",
+      "description": "Encode or decode Base64 strings directly in your browser.",
+      "category": "dev-tools",
+      "path": "/tools/base64/"
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter",
+      "description": "Format and beautify JSON instantly.",
+      "category": "dev-tools",
+      "path": "/tools/json-formatter/"
+    }
+  ]
+}
